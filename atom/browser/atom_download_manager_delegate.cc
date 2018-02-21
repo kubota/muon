@@ -109,10 +109,10 @@ void AtomDownloadManagerDelegate::OnDownloadPathGenerated(
 
   callback.Run(path,
                download::DownloadItem::TARGET_DISPOSITION_PROMPT,
-               content::DOWNLOAD_DANGER_TYPE_NOT_DANGEROUS, path,
+               download::DOWNLOAD_DANGER_TYPE_NOT_DANGEROUS, path,
                path.empty()
-                  ? content::DOWNLOAD_INTERRUPT_REASON_USER_CANCELED
-                  : content::DOWNLOAD_INTERRUPT_REASON_NONE);
+                  ? download::DOWNLOAD_INTERRUPT_REASON_USER_CANCELED
+                  : download::DOWNLOAD_INTERRUPT_REASON_NONE);
 }
 
 void AtomDownloadManagerDelegate::Shutdown() {
