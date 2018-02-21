@@ -23,7 +23,8 @@ bool BraveCredentialsFilter::ShouldSave(
 }
 
 void BraveCredentialsFilter::ReportFormLoginSuccess(
-    const PasswordFormManager& form_manager) const {}
+    const PasswordFormManager& form_manager,
+    const GURL& main_frame_url) const {}
 
 void BraveCredentialsFilter::FilterResultsPtr(
     std::vector<std::unique_ptr<autofill::PasswordForm>>* results) const {}
