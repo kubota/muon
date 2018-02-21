@@ -9,14 +9,9 @@
 
 #include "base/logging.h"
 #include "ui/gfx/vector_icon_types.h"
+#include "components/vector_icons/cc_macros.h"
 
 #define PATH_ELEMENT_TEMPLATE(path_name, ...) \
 static constexpr gfx::PathElement path_name[] = {__VA_ARGS__};
 
-#define VECTOR_ICON_TEMPLATE(icon_name, path_name, path_name_1x) \
-const gfx::VectorIcon icon_name = { path_name , path_name_1x };
-
 using namespace gfx;
-
-VECTOR_ICON_TEMPLATE(kBrowserToolsUpdateIcon, nullptr, nullptr)
-VECTOR_ICON_TEMPLATE(kUsbSecurityKeyIcon, nullptr, nullptr)
