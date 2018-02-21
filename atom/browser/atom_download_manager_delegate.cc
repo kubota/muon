@@ -80,7 +80,8 @@ void AtomDownloadManagerDelegate::OnDownloadPathGenerated(
   }
 
   NativeWindow* window = nullptr;
-  content::WebContents* web_contents = item->GetWebContents();
+  content::WebContents* web_contents =
+    content::DownloadItemUtils::GetWebContents(download_item);
   auto relay = web_contents ? NativeWindowRelay::FromWebContents(web_contents)
                             : nullptr;
   if (relay)
