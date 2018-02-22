@@ -91,6 +91,7 @@ class AtomDownloadManagerDelegate : public content::DownloadManagerDelegate,
                          base::FilePath::StringType* extension);
 
   void OnDownloadItemSelected(const content::DownloadTargetCallback& callback,
+                              DownloadTargetInfo* target_info,
                               api::DownloadItem* download_item,
                               const std::vector<base::FilePath>& paths);
 

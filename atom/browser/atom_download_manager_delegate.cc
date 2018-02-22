@@ -256,6 +256,7 @@ bool AtomDownloadManagerDelegate::GetItemExtension(
 
 void AtomDownloadManagerDelegate:: OnDownloadItemSelected(
     const content::DownloadTargetCallback& callback,
+    DownloadTargetInfo* target_info,
     api::DownloadItem* download_item,
     const std::vector<base::FilePath>& paths) {
   DCHECK(!paths.empty());
@@ -338,7 +339,7 @@ void AtomDownloadManagerDelegate::OnDownloadTargetDetermined(
       file_type_info,
       ui::SelectFileDialog::SELECT_SAVEAS_FILE,
       base::Bind(&AtomDownloadManagerDelegate::OnDownloadItemSelected,
-                 base::Unretained(this), callback, download_item),
+                 base::Unretained(this), callback, target_info.get(), download_item),
       base::Bind(&AtomDownloadManagerDelegate::OnDownloadItemSelectionCancelled,
                  base::Unretained(this), callback, item));
 }
