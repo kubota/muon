@@ -339,7 +339,8 @@ void AtomDownloadManagerDelegate::OnDownloadTargetDetermined(
       file_type_info,
       ui::SelectFileDialog::SELECT_SAVEAS_FILE,
       base::Bind(&AtomDownloadManagerDelegate::OnDownloadItemSelected,
-                 base::Unretained(this), callback, target_info.get(), download_item),
+                 base::Unretained(this), callback, target_info.get(),
+                 download_item),
       base::Bind(&AtomDownloadManagerDelegate::OnDownloadItemSelectionCancelled,
                  base::Unretained(this), callback, item));
 }
