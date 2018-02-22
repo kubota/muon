@@ -372,7 +372,9 @@ void BraveContentBrowserClient::GetAdditionalMappedFilesForChildProcess(
 #endif  // defined(OS_POSIX) && !defined(OS_MACOSX)
 
 void BraveContentBrowserClient::RenderProcessWillLaunch(
-    content::RenderProcessHost* host) {
+    content::RenderProcessHost* host,
+    service_manager::mojom::ServiceRequest* service_request) {
+
   int id = host->GetID();
   Profile* profile = Profile::FromBrowserContext(host->GetBrowserContext());
 
