@@ -27,7 +27,7 @@ index 383f8da4dfb402c79af2a24e0de5a8ae7eff6ff2..ee61886f08149eb62a8ac2c22891a095
    // BEGIN USAGE THAT NEEDS TO BE FIXED.
    friend class ::chromeos::BlockingMethodCaller;  // http://crbug.com/125360
 diff --git a/build/config/BUILDCONFIG.gn b/build/config/BUILDCONFIG.gn
-index 54046e09b8028fd8e6d4448d6dc71aea990d9b9a..429dd1b32deaa31b809a142785827b5a71088110 100644
+index 7d60dd920904d3f98573680e311096f0b9cb252e..e20be4554ef50dd52fa28e23d4de361fe2bb12f6 100644
 --- a/build/config/BUILDCONFIG.gn
 +++ b/build/config/BUILDCONFIG.gn
 @@ -152,6 +152,8 @@ declare_args() {
@@ -98,7 +98,7 @@ index 7fa01dcbe6daf97d1afea6141f34ecce02a9837b..14649ee85015cd199403f4ecabc688f0
        default_output_extension = ".a"
        output_prefix = "lib"
 diff --git a/build/toolchain/win/BUILD.gn b/build/toolchain/win/BUILD.gn
-index 4de6381852da525e66aa620042cbf65c078abe29..7030c7a71eba8fd4eb9a8984ce527c1f9ea35e7d 100644
+index e0f6fdfb00b424b59d83d5b9418a675943bb8c34..8f39c77e8908baf67656bb75e42f77491dba0b75 100644
 --- a/build/toolchain/win/BUILD.gn
 +++ b/build/toolchain/win/BUILD.gn
 @@ -6,6 +6,7 @@ import("//build/config/clang/clang.gni")
@@ -119,7 +119,7 @@ index 4de6381852da525e66aa620042cbf65c078abe29..7030c7a71eba8fd4eb9a8984ce527c1f
    goma_prefix = ""
  }
 diff --git a/chrome/BUILD.gn b/chrome/BUILD.gn
-index 7294dd94e402525681e5c72de3421ca28111e3e0..c3e75b250c797ddf63b84cb8cfb4847cfdb6d30c 100644
+index 41e97849dd83ed4122140680ac230ba41f3fb50a..dc0cc21b59043a89e663a9964e3a59b8cffdffb5 100644
 --- a/chrome/BUILD.gn
 +++ b/chrome/BUILD.gn
 @@ -38,6 +38,11 @@ if (is_android) {
@@ -253,7 +253,7 @@ index 54e54a5a1f922b84746b2f62c900857206257a24..00e706352dd09a0c8a7d5773c966ea2e
  
    return ps;
 diff --git a/chrome/browser/printing/print_view_manager_base.cc b/chrome/browser/printing/print_view_manager_base.cc
-index 5e13c21a52656bf0f3eb328e37f71e275f37efcd..adf9fa49f2e5647e8432408abc2ec4dd887004ed 100644
+index 13db9cdbc7d8420d0d47568a7bfc8db49e3009b3..dae6d6e3d858f036514a21616abf73c9485e5008 100644
 --- a/chrome/browser/printing/print_view_manager_base.cc
 +++ b/chrome/browser/printing/print_view_manager_base.cc
 @@ -72,13 +72,13 @@ using PrintSettingsCallback =
@@ -511,7 +511,7 @@ index 440fdf8df66efce1b68a0463189986a6a0b0353a..7cc8fb11ecb5e2caa67e4e92d6d4526e
    // |tab_id|, and returns the WebContents index and the TabStripModel.
    int FindTabStripModelById(int32_t tab_id, TabStripModel** model) const;
 diff --git a/chrome/common/BUILD.gn b/chrome/common/BUILD.gn
-index 0e68a8a5aee1f403aab47bec1d41185c442ccad1..95f36318df8444b19c27c59228a364da1c8fd806 100644
+index 9aef68a0755251201bbcf741cec438bae806044e..d525c593af29342ebb4cff11a9b2ae6f18f22272 100644
 --- a/chrome/common/BUILD.gn
 +++ b/chrome/common/BUILD.gn
 @@ -496,6 +496,12 @@ static_library("common") {
@@ -892,7 +892,7 @@ index d7734d8883c3e438ece3d509b7bb331931831178..6e6cdda19c271de7e5429db02b3e17b2
  }
  # Note: Update the test expectations in GetBaseMessageIdForMode.GoogleStringIds
 diff --git a/chrome/renderer/BUILD.gn b/chrome/renderer/BUILD.gn
-index b9d1a0406b45e6944072d470a2c3ea3b706e0fd1..1f7fff15f57300c53ad854e87846dfe428fa1057 100644
+index 1ec9a536a3784808f4bdb948c85c6a169088c347..c28e2377769fd916e1b51b01426d5651dc80ac81 100644
 --- a/chrome/renderer/BUILD.gn
 +++ b/chrome/renderer/BUILD.gn
 @@ -414,6 +414,19 @@ static_library("renderer") {
@@ -916,7 +916,7 @@ index b9d1a0406b45e6944072d470a2c3ea3b706e0fd1..1f7fff15f57300c53ad854e87846dfe4
  
  static_library("test_support") {
 diff --git a/chrome/renderer/chrome_content_renderer_client.cc b/chrome/renderer/chrome_content_renderer_client.cc
-index c38cbea519e4087cc3fd952a53be4a56935e80e5..ce2b1d2c49dbbd3b8794a483f26e9ec53b3000f2 100644
+index b9777479aaf82bdd8fce2f22c034317e9d99468e..2bf9bd9215e33b2e6384b0b4495e753498f3ade4 100644
 --- a/chrome/renderer/chrome_content_renderer_client.cc
 +++ b/chrome/renderer/chrome_content_renderer_client.cc
 @@ -1546,6 +1546,7 @@ ChromeContentRendererClient::CreateBrowserPluginDelegate(
@@ -1317,10 +1317,10 @@ index 3e01e3706f546265e3c844654bbbf22d53d3718c..cc719d7f0fad01527596f45d27bf4a06
  
  void BrowserPluginGuest::OnDragStatusUpdate(int browser_plugin_instance_id,
 diff --git a/content/browser/frame_host/render_frame_message_filter.cc b/content/browser/frame_host/render_frame_message_filter.cc
-index 044f8c3a59127732efca19d4d784fa1cf02fbcf5..a15166464b108c389975527c900e1e2fc80bcbe1 100644
+index ff015217c94ab288ed27ba186572863b232b9b51..390ef2c33f1d881fd9c29ae8b6f8161e3b3d3440 100644
 --- a/content/browser/frame_host/render_frame_message_filter.cc
 +++ b/content/browser/frame_host/render_frame_message_filter.cc
-@@ -572,7 +572,7 @@ void RenderFrameMessageFilter::GetPluginsCallback(
+@@ -579,7 +579,7 @@ void RenderFrameMessageFilter::GetPluginsCallback(
    PluginServiceFilter* filter = PluginServiceImpl::GetInstance()->GetFilter();
    std::vector<WebPluginInfo> plugins;
  
@@ -1343,10 +1343,10 @@ index 83a8792dbe1ee56e7541828861253b2d5d39cc22..52515549ce39704a701847d14143c493
  
  @end
 diff --git a/content/browser/renderer_host/render_widget_host_view_aura.cc b/content/browser/renderer_host/render_widget_host_view_aura.cc
-index 7ed5c28b351407a8b9b9fcce90f6866bee16372c..5ba37a38684805053d4793a3343d67053f892ea2 100644
+index e8b6c642e672b102a82ae7dd0640f9393238ec68..97a58af3db9075bf89f3d51d1dc51e7fcf9372e3 100644
 --- a/content/browser/renderer_host/render_widget_host_view_aura.cc
 +++ b/content/browser/renderer_host/render_widget_host_view_aura.cc
-@@ -1668,8 +1668,23 @@ bool RenderWidgetHostViewAura::TransformPointToLocalCoordSpace(
+@@ -1677,8 +1677,23 @@ bool RenderWidgetHostViewAura::TransformPointToLocalCoordSpace(
        !delegated_frame_host_->TransformPointToLocalCoordSpace(
            point_in_pixels, original_surface, transformed_point))
      return false;
@@ -1373,7 +1373,7 @@ index 7ed5c28b351407a8b9b9fcce90f6866bee16372c..5ba37a38684805053d4793a3343d6705
  }
  
 diff --git a/content/browser/renderer_host/render_widget_host_view_mac.mm b/content/browser/renderer_host/render_widget_host_view_mac.mm
-index 2e6d393fafa6c4f6caecce7c7031adc206caa975..9bd1ce9428894ed2773a6f8988e98987a765acdd 100644
+index 9f4bd756a6b3940af7c11992409009f5a6c4a0c6..0f4fedcee998c79cc8da4c923ef89610a968754c 100644
 --- a/content/browser/renderer_host/render_widget_host_view_mac.mm
 +++ b/content/browser/renderer_host/render_widget_host_view_mac.mm
 @@ -137,6 +137,12 @@ RenderWidgetHostView* GetRenderWidgetHostViewToUse(
@@ -1389,7 +1389,7 @@ index 2e6d393fafa6c4f6caecce7c7031adc206caa975..9bd1ce9428894ed2773a6f8988e98987
  // These are not documented, so use only after checking -respondsToSelector:.
  @interface NSApplication (UndocumentedSpeechMethods)
  - (void)speakString:(NSString*)string;
-@@ -1596,6 +1602,10 @@ void RenderWidgetHostViewMac::SetActive(bool active) {
+@@ -1610,6 +1616,10 @@ void RenderWidgetHostViewMac::SetActive(bool active) {
    if (render_widget_host_) {
      render_widget_host_->SetActive(active);
      if (active) {
@@ -1400,7 +1400,7 @@ index 2e6d393fafa6c4f6caecce7c7031adc206caa975..9bd1ce9428894ed2773a6f8988e98987
        if (HasFocus())
          render_widget_host_->Focus();
      } else {
-@@ -1858,7 +1868,14 @@ Class GetRenderWidgetHostViewCocoaClassForTesting() {
+@@ -1872,7 +1882,14 @@ Class GetRenderWidgetHostViewCocoaClassForTesting() {
  }
  
  - (BOOL)acceptsFirstMouse:(NSEvent*)theEvent {
@@ -1415,7 +1415,7 @@ index 2e6d393fafa6c4f6caecce7c7031adc206caa975..9bd1ce9428894ed2773a6f8988e98987
  }
  
  - (void)setCloseOnDeactivate:(BOOL)b {
-@@ -2091,8 +2108,10 @@ Class GetRenderWidgetHostViewCocoaClassForTesting() {
+@@ -2105,8 +2122,10 @@ Class GetRenderWidgetHostViewCocoaClassForTesting() {
    if (EventIsReservedBySystem(theEvent))
      return;
  
@@ -1426,7 +1426,7 @@ index 2e6d393fafa6c4f6caecce7c7031adc206caa975..9bd1ce9428894ed2773a6f8988e98987
  
    if ([theEvent type] == NSFlagsChanged) {
      // Ignore NSFlagsChanged events from the NumLock and Fn keys as
-@@ -2973,6 +2992,11 @@ Class GetRenderWidgetHostViewCocoaClassForTesting() {
+@@ -2970,6 +2989,11 @@ Class GetRenderWidgetHostViewCocoaClassForTesting() {
  // move) for the given event. Customize here to be more selective about which
  // key presses to autohide on.
  - (BOOL)shouldAutohideCursorForEvent:(NSEvent*)event {
@@ -1439,10 +1439,10 @@ index 2e6d393fafa6c4f6caecce7c7031adc206caa975..9bd1ce9428894ed2773a6f8988e98987
                ui::TEXT_INPUT_TYPE_NONE &&
            [event type] == NSKeyDown &&
 diff --git a/content/browser/web_contents/web_contents_impl.cc b/content/browser/web_contents/web_contents_impl.cc
-index 45cb71f1d3f9c022c2b72e3f30e3c199d444c9da..690fe07e1295375a894d5de40209cd3918dd87ce 100644
+index 4b3f5bbd2119675a3ccd3da97a17ccdae3d4766d..bf241b1349b56f414f786668bb346350062060d8 100644
 --- a/content/browser/web_contents/web_contents_impl.cc
 +++ b/content/browser/web_contents/web_contents_impl.cc
-@@ -1722,7 +1722,8 @@ void WebContentsImpl::Init(const WebContents::CreateParams& params) {
+@@ -1717,7 +1717,8 @@ void WebContentsImpl::Init(const WebContents::CreateParams& params) {
    // This is set before initializing the render manager since
    // RenderFrameHostManager::Init calls back into us via its delegate to ask if
    // it should be hidden.
@@ -1452,7 +1452,7 @@ index 45cb71f1d3f9c022c2b72e3f30e3c199d444c9da..690fe07e1295375a894d5de40209cd39
  
    // The routing ids must either all be set or all be unset.
    DCHECK((params.routing_id == MSG_ROUTING_NONE &&
-@@ -2268,7 +2269,8 @@ void WebContentsImpl::CreateNewWindow(
+@@ -2262,7 +2263,8 @@ void WebContentsImpl::CreateNewWindow(
    DCHECK(!params.opener_suppressed || render_view_route_id == MSG_ROUTING_NONE);
  
    scoped_refptr<SiteInstance> site_instance =
@@ -1463,10 +1463,10 @@ index 45cb71f1d3f9c022c2b72e3f30e3c199d444c9da..690fe07e1295375a894d5de40209cd39
            : source_site_instance;
  
 diff --git a/content/browser/web_contents/web_contents_view_mac.mm b/content/browser/web_contents/web_contents_view_mac.mm
-index 97016f03a8dde84b5344cac2778168553d002ce5..9b9bb5eaaa1a729d1aa1db6b12a38420e46fc82e 100644
+index d3533591027d3e51955f495805c7ebb6e93c7972..0ccf890bfabe6d0df11ce362104446cebc06c39c 100644
 --- a/content/browser/web_contents/web_contents_view_mac.mm
 +++ b/content/browser/web_contents/web_contents_view_mac.mm
-@@ -614,6 +614,7 @@ void WebContentsViewMac::CloseTab() {
+@@ -586,6 +586,7 @@ void WebContentsViewMac::CloseTab() {
               endedAt:(NSPoint)screenPoint
             operation:(NSDragOperation)operation {
    [dragSource_ endDragAt:screenPoint operation:operation];
@@ -1813,10 +1813,10 @@ index 023555bcd3b56fd12c3319096deff07fa9854388..5b75bfaa858cead732a701029f45f549
  
    bool ShouldSelectReplacement() const {
 diff --git a/third_party/WebKit/Source/core/exported/WebViewImpl.cpp b/third_party/WebKit/Source/core/exported/WebViewImpl.cpp
-index 4baae03e417ea4cdc1374fc8baeeb51496f4d5fa..5a97eae90fca52062b80b86304bd3be20b9409df 100644
+index d88e7cd9adf79115cab2d6ccfff43cb88b38fc5b..146a660e0a7bb0202baa1d0b76d051d612a5d9d0 100644
 --- a/third_party/WebKit/Source/core/exported/WebViewImpl.cpp
 +++ b/third_party/WebKit/Source/core/exported/WebViewImpl.cpp
-@@ -3221,6 +3221,7 @@ void WebViewImpl::DidCloseContextMenu() {
+@@ -3228,6 +3228,7 @@ void WebViewImpl::DidCloseContextMenu() {
    LocalFrame* frame = page_->GetFocusController().FocusedFrame();
    if (frame)
      frame->Selection().SetCaretBlinkingSuspended(false);
@@ -1855,7 +1855,7 @@ index 53cfd0e6c9b402ed172d5ba9a354f8b029c66d6e..bb91c05037981301fe5f76c257862f61
    return true;
  }
 diff --git a/third_party/WebKit/Source/platform/bindings/V8PerIsolateData.cpp b/third_party/WebKit/Source/platform/bindings/V8PerIsolateData.cpp
-index 9e62a71a329faf3b48f3628c779495f04c67bb01..6d6fef85c6e397d592e60409cc38d24d6aa4087b 100644
+index 30400494164b2d2cc5d1fa5726914e965633ea55..0c982379766e07267f54d7e19f03f1e3d0fd0887 100644
 --- a/third_party/WebKit/Source/platform/bindings/V8PerIsolateData.cpp
 +++ b/third_party/WebKit/Source/platform/bindings/V8PerIsolateData.cpp
 @@ -49,7 +49,8 @@ v8::Isolate* MainThreadIsolate() {
@@ -1869,10 +1869,10 @@ index 9e62a71a329faf3b48f3628c779495f04c67bb01..6d6fef85c6e397d592e60409cc38d24d
  
  static void MicrotasksCompletedCallback(v8::Isolate* isolate) {
 diff --git a/third_party/boringssl/BUILD.generated.gni b/third_party/boringssl/BUILD.generated.gni
-index aa1f1200431906a966f9c59ac885ebec7e491259..a7ac465c6205b45b1a8193f447a0b22353394bf2 100644
+index 96ed933288a188ebebc196a968a0bb9f1208f6e7..0eabc685972acb95f37d40e69e3b036f75e78ee9 100644
 --- a/third_party/boringssl/BUILD.generated.gni
 +++ b/third_party/boringssl/BUILD.generated.gni
-@@ -375,6 +375,24 @@ ssl_sources = [
+@@ -376,6 +376,24 @@ ssl_sources = [
    "src/ssl/tls_record.cc",
  ]
  
